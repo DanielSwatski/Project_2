@@ -59,12 +59,24 @@
             left: 142px;
             top: 181px;
             position: absolute;
-            height: 0px;
+            height: 21px;
         }
         #txtPhone {
             z-index: 1;
             left: 146px;
             top: 228px;
+            position: absolute;
+        }
+        #Submit1 {
+            z-index: 1;
+            left: 38px;
+            top: 405px;
+            position: absolute;
+        }
+        #btnSubmit {
+            z-index: 1;
+            left: 32px;
+            top: 399px;
             position: absolute;
         }
     </style>
@@ -75,12 +87,36 @@
             <asp:Label ID="lblName" runat="server" style="z-index: 1; left: 33px; top: 27px; position: absolute" Text="Name"></asp:Label>
         </div>
         <asp:Label ID="lblCourseHomePage" runat="server" style="z-index: 1; left: 563px; top: 25px; position: absolute" Text="Course Home Page"></asp:Label>
-        <asp:GridView ID="grdViewCourseRef" runat="server" style="z-index: 1; left: 670px; top: 123px; position: absolute; height: 249px; width: 386px" AutoGenerateColumns="False">
-        </asp:GridView>
         <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 31px; top: 81px; position: absolute" Text="StudentID"></asp:Label>
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 34px; top: 127px; position: absolute; right: 1411px; height: 22px" Text="Email"></asp:Label>
         <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 25px; top: 177px; position: absolute" Text="Address"></asp:Label>
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 30px; top: 230px; position: absolute; height: 3px; width: 1px" Text="Phone"></asp:Label>
+        <asp:GridView ID="grdViewCourseRef" runat="server" style="z-index: 1; left: 355px; top: 128px; position: absolute; " AutoGenerateColumns="False">
+            <Columns>
+                <asp:TemplateField HeaderText="Select Course">
+                    <ItemTemplate>
+                        <asp:CheckBox ID="CheckBox1" runat="server" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:BoundField DataField="CRN" HeaderText="CRN" />
+                <asp:BoundField DataField="DepartmentCode" HeaderText="Department Code" />
+                <asp:BoundField DataField="CourseTitle" HeaderText="Course Title" SortExpression="CourseTitle" />
+                <asp:BoundField DataField="Days" HeaderText="Days" SortExpression="Days" />
+                <asp:BoundField DataField="Time" HeaderText="Time" />
+                <asp:BoundField DataField="Professor" HeaderText="Professor" SortExpression="Professor" />
+                <asp:BoundField DataField="CreditHours" HeaderText="CreditHours" SortExpression="CreditHours" />
+                <asp:BoundField DataField="TotalAvailableSeats" HeaderText="Available Seats" SortExpression="AvailableSeats" />
+                <asp:TemplateField HeaderText="Course Delivery Method">
+                    <ItemTemplate>
+                        <asp:DropDownList ID="DropDownList1" runat="server">
+                            <asp:ListItem>Traditional</asp:ListItem>
+                            <asp:ListItem>Online</asp:ListItem>
+                            <asp:ListItem>Hybrid</asp:ListItem>
+                        </asp:DropDownList>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
         <p>
             <input id="txtName" type="text" /></p>
         <p>
@@ -95,5 +131,9 @@
             <asp:ListItem>Financial Aid</asp:ListItem>
         </asp:DropDownList>
     </form>
+    <p>
+        &nbsp;</p>
+    <p>
+        <input id="btnSubmit" type="submit" value="submit" /></p>
 </body>
 </html>

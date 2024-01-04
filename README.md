@@ -1,0 +1,1 @@
+This is a course selection project for CIS 3342 at Temple University. If you are looking for hints from this project, dont just copy my code. Try to figure out how it works. Pascucci will find out and fail you. Dont mess around
